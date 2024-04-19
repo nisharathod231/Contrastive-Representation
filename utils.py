@@ -26,14 +26,13 @@ def get_data(
     '''
     data = np.load(data_path)
     X = data['images']
-
-    # Normalize pixel values to [0, 1]
-    X = X.astype('float32') / 255.0
-
     try:
         y = data['labels']
     except KeyError:
         y = None
+
+    X = X / 255.0
+
     X = X.transpose(0, 3, 1, 2)
     if is_binary:
         idxs0 = np.where(y == 0)[0]
@@ -83,23 +82,24 @@ def train_test_split(
     '''
     assert test_ratio < 1 and test_ratio > 0
 
-    #raise NotImplementedError('Split the dataset here')
-    #my changes
-    
-    # Shuffle the data
-    indices = np.arange(X.shape[0])
-    np.random.shuffle(indices)
-    X = X[indices]
-    y = y[indices]
-    # Split the data
-    test_size = int(X.shape[0] * test_ratio)
-    X_test = X[:test_size]
-    y_test = y[:test_size]
-    X_train = X[test_size:]
-    y_train = y[test_size:]
+    # raise NotImplementedError('Split the dataset here')
+    data_size = X.shape[0]
+    split_index = int(data_size * test_ratio)
 
+    data_indices = np.random.permutation(data_size)
+    X_shuffled = X[data_indices]
+    y_shuffled = y[data_indices] if y is not None else None
 
+    # Split into training and test sets
+    X_test = X_shuffled[:split_index]
+    y_test = y_shuffled[:split_index] if y is not None else None
+    X_train = X_shuffled[split_index:]
+    y_train = y_shuffled[split_index:] if y is not None else None
+    # print(X_train.shape)
+    # print(X_test.shape)
     return X_train, y_train, X_test, y_test
+
+    # return X_train, y_train, X_test, y_test
 
 
 def get_data_batch(
@@ -117,10 +117,14 @@ def get_data_batch(
     - X_batch: np.ndarray, batch of images
     - y_batch: np.ndarray, batch of labels
     '''
-    # TODO: get random indices of the batch size without replacement from the dataset
-    idxs = np.random.choice(X.shape[0], batch_size, replace=False)
-    X_batch = X[idxs]
-    y_batch = y[idxs]
+    # Get the total number of samples
+    data_size = X.shape[0]
+
+    # Check if batch size is valid
+    if batch_size > data_size:
+        raise ValueError("Batch size cannot be greater than the dataset size")
+
+    idxs = np.random.choice(data_size, batch_size, replace=False) # TODO: get random indices of the batch size without replacement from the dataset
     return X[idxs], y[idxs]
 
 
@@ -141,34 +145,23 @@ def get_contrastive_data_batch(
     - X_p: np.ndarray, batch of positive samples
     - X_n: np.ndarray, batch of negative samples
     '''
-    #raise NotImplementedError('Get a batch of anchor, positive, and negative samples here')
+    # raise NotImplementedError('Get a batch of anchor, positive, and negative samples here')
+    while True:
+        idxs = np.random.choice(X.shape[0], batch_size, replace=False)
+        X_anchor = X[idxs]
+        label_anchor =  y[idxs]
+        positive_idxs = [] 
+        negative_idxs = []
+        for i in range(0, len(X_anchor)):
+            positive_idx = np.random.choice(len(np.where(y == label_anchor[i])[0]))
+            negative_idx = np.random.choice(len(np.where(y != label_anchor[i])[0]))
+            positive_idxs.append(np.where(y == label_anchor[i])[0][positive_idx])
+            negative_idxs.append(np.where(y != label_anchor[i])[0][negative_idx])
 
-    # Select anchor indices
-    anchor_idxs = np.random.choice(X.shape[0], batch_size, replace=False)
-    
-    positive_idxs = []
-    negative_idxs = []
-    
-    for anchor_idx in anchor_idxs:
-        anchor_label = y[anchor_idx]
-        
-        # Select a positive sample, which should have the same label as the anchor
-        positive_idx = anchor_idx
-        while positive_idx == anchor_idx:
-            positive_idx = np.random.choice(np.where(y == anchor_label)[0])
-        positive_idxs.append(positive_idx)
-        
-        # Select a negative sample, which should have a different label from the anchor
-        negative_idx = np.random.choice(np.where(y != anchor_label)[0])
-        negative_idxs.append(negative_idx)
-    
-    # Extract the actual anchor, positive, and negative samples
-    X_a = X[anchor_idxs]
-    X_p = X[positive_idxs]
-    X_n = X[negative_idxs]
-    
-    return X_a, X_p, X_n
+        X_positive = X[positive_idxs]
+        X_negative = X[negative_idxs]
 
+        yield X_anchor, X_positive, X_negative
 
 def plot_losses(
         train_losses: list, val_losses: list, title: str
@@ -187,7 +180,7 @@ def plot_losses(
     plt.ylabel("Loss")
     plt.title(title)
     plt.legend()
-    plt.savefig('images/loss.png')
+    plt.savefig('images/1.1a.png')
     plt.close()
 
 
@@ -208,7 +201,7 @@ def plot_accuracies(
     plt.ylabel("Accuracy")
     plt.title(title)
     plt.legend()
-    plt.savefig('images/acc.png')
+    plt.savefig('images/1.1b.png')
     plt.close()
 
 
@@ -222,25 +215,24 @@ def plot_tsne(
     - z: torch.Tensor, representation
     - y: torch.Tensor, labels
     '''
-    #z2 = # TODO: get 2D t-SNE of the representation
 
-    # Convert tensors to numpy arrays if they are not already
+
     if isinstance(z, torch.Tensor):
         z = z.detach().cpu().numpy()
     if isinstance(y, torch.Tensor):
         y = y.detach().cpu().numpy()
 
-    # Perform t-SNE dimensionality reduction
-    tsne = TSNE(n_components=2, random_state=0)
-    z2 = tsne.fit_transform(z)
     
-    # Plot the 2D t-SNE representation
+    tsne_model = TSNE(n_components=2, random_state=42)
+    z2 = tsne_model.fit_transform(z)
+    
+    
+    print("plot tsne")
     plt.figure(figsize=(10, 8))
-
     scatter = plt.scatter(z2[:, 0], z2[:, 1], c=y, cmap='tab10')
     plt.colorbar(scatter)
     plt.title("2D t-SNE Representation")
     plt.xlabel("t-SNE feature 1")
     plt.ylabel("t-SNE feature 2")
-    plt.savefig('images/tsne.png')
-    plt.close()
+    plt.savefig('images/1.3.png')
+    plt.show()
