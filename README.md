@@ -4,3 +4,13 @@ This project has a comprehensive exploration of two key topics: Softmax Regressi
 
 
 **Contrastive Representation Learning**, on the other hand, is part of unsupervised learn- ing, specifically focusing on learning representations of data in a way that enhances their discriminatory power. By training a neural network to maximize the similarity between similar instances while minimizing the similarity between dissimilar instances, Contrastive Representation Learning aims to create embeddings that capture meaningful relationships within the data. In this assignment I built a neural network architecture and train it using a contrastive loss function.
+
+
+Instructions to Run
+
+Folder Structure
+
+<img width="342" alt="Screenshot 2024-04-19 at 12 24 42 PM" src="https://github.com/nisharathod231/Contrastive-Representation/assets/163638504/ca85c4e1-36ec-44fc-93b9-f01e85b77daa">
+
+python run . py \ −−mode name of mode \
+<other hyper−params here>
