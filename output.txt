@@ -1,0 +1,374 @@
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode softmax --train_data_path data/cifar10_train.npz --test_data_path data/test_images.npz --num_iters 4000 --lr 0.005 --batch_size 32 --l2_lambda 1e-3 --grad_norm_clip 4
+    Iter 4000 - Train Loss: 1.6479 - Train Acc: 0.4375 - Val Loss: 1.8270 - Val Acc: 0.3684
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode logistic --train_data_path data/cifar10_train.npz --test_data_path data/test_images.npz --num_iters 4000 --lr 0.005 --batch_size 256 --l2_lambda 1e-3 --grad_norm_clip 4
+    Iter 4000 - Train Loss: 0.3516 - Train Acc: 0.8359 - Val Loss: 0.4302 - Val Acc: 0.8030
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode cont_rep --num_iters 1 --lr 1e-3 --batch_size 64 --l2_lambda 0.0005 --grad_norm_clip 10
+    TOTAL iterations:  625
+    Epoch 0 Loss 0.4408171474933624
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode cont_rep --num_iters 1 --lr 1e-3 --batch_size 32 --l2_lambda 0.0005 --grad_norm_clip 10
+    TOTAL iterations:  1250
+    Epoch 0 Loss 0.24333849549293518
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode cont_rep --num_iters 1000 --lr 1e-3 --batch_size 1024 --l2_lambda 0.0005 --grad_norm_clip 10
+    TOTAL iterations:  40000
+    Epoch 0 Loss 0.6161013841629028
+    saving..
+    Epoch 1 Loss 0.52592533826828
+    Epoch 2 Loss 0.4890429377555847
+    Epoch 3 Loss 0.44526243209838867
+    Epoch 4 Loss 0.38430237770080566
+    Epoch 5 Loss 0.3666340708732605
+    Epoch 6 Loss 0.3488222360610962
+    Epoch 7 Loss 0.27908986806869507
+    Epoch 8 Loss 0.2896135449409485
+    Epoch 9 Loss 0.2481086552143097
+    Epoch 10 Loss 0.1982308030128479
+    saving..
+    Epoch 11 Loss 0.2065589278936386
+    Epoch 12 Loss 0.17864450812339783
+    Epoch 13 Loss 0.16193415224552155
+    Epoch 14 Loss 0.16926972568035126
+    Epoch 15 Loss 0.1503489911556244
+    Epoch 16 Loss 0.15215152502059937
+    Epoch 17 Loss 0.12825261056423187
+    Epoch 18 Loss 0.10337060689926147
+    Epoch 19 Loss 0.14740023016929626
+    Epoch 20 Loss 0.09476423263549805
+    saving..
+    Epoch 21 Loss 0.10729169100522995
+    Epoch 22 Loss 0.08005677908658981
+    Epoch 23 Loss 0.0683591216802597
+    Epoch 24 Loss 0.08830620348453522
+    Epoch 25 Loss 0.07965782284736633
+    Epoch 26 Loss 0.06255017220973969
+    Epoch 27 Loss 0.07187718152999878
+    Epoch 28 Loss 0.05143557861447334
+    Epoch 29 Loss 0.061947885900735855
+    Epoch 30 Loss 0.0608634389936924
+    saving..
+    Epoch 31 Loss 0.03303171321749687
+    Epoch 32 Loss 0.05240434408187866
+    Epoch 33 Loss 0.04911878705024719
+    Epoch 34 Loss 0.04199472814798355
+    Epoch 35 Loss 0.048961490392684937
+    Epoch 36 Loss 0.02453414537012577
+    Epoch 37 Loss 0.040376435965299606
+    Epoch 38 Loss 0.032679468393325806
+    Epoch 39 Loss 0.058613844215869904
+    Epoch 40 Loss 0.03408759832382202
+    saving..
+    Epoch 41 Loss 0.016242099925875664
+    Epoch 42 Loss 0.02494702860713005
+    Epoch 43 Loss 0.03124774619936943
+    Epoch 44 Loss 0.024499308317899704
+    Epoch 45 Loss 0.024525616317987442
+    Epoch 46 Loss 0.019818266853690147
+    Epoch 47 Loss 0.03277435153722763
+    Epoch 48 Loss 0.023769889026880264
+    Epoch 49 Loss 0.02538653090596199
+    Epoch 50 Loss 0.020564276725053787
+    saving..
+    Epoch 51 Loss 0.016957245767116547
+    Epoch 52 Loss 0.023963887244462967
+    Epoch 53 Loss 0.01303826179355383
+
+
+
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode cont_rep --num_iters 1200 --lr 1e-3 --batch_size 1024 --l2_lambda 0.0005 --grad_norm_clip 10
+TOTAL iterations:  48000
+    Epoch 0 Loss 0.6150389909744263
+    saving..
+    Epoch 1 Loss 0.514114260673523
+    Epoch 2 Loss 0.4935097098350525
+    Epoch 3 Loss 0.4576323330402374
+    Epoch 4 Loss 0.4085654020309448
+    Epoch 5 Loss 0.3654852509498596
+    Epoch 6 Loss 0.3402782082557678
+    Epoch 7 Loss 0.27650851011276245
+    Epoch 8 Loss 0.28555941581726074
+    Epoch 9 Loss 0.2394731491804123
+    Epoch 10 Loss 0.21258997917175293
+    saving..
+    Epoch 11 Loss 0.21123510599136353
+    Epoch 12 Loss 0.18457967042922974
+    Epoch 13 Loss 0.17513933777809143
+    Epoch 14 Loss 0.1781255304813385
+    Epoch 15 Loss 0.1656711995601654
+    Epoch 16 Loss 0.1430628001689911
+    Epoch 17 Loss 0.1300908774137497
+    Epoch 18 Loss 0.10676559805870056
+    Epoch 19 Loss 0.12780922651290894
+    Epoch 20 Loss 0.10945052653551102
+    saving..
+    Epoch 21 Loss 0.1070534959435463
+    Epoch 22 Loss 0.08012464642524719
+    Epoch 23 Loss 0.07805272191762924
+    Epoch 24 Loss 0.07979371398687363
+    Epoch 25 Loss 0.07890823483467102
+    Epoch 26 Loss 0.06284362077713013
+    Epoch 27 Loss 0.06818953156471252
+    Epoch 28 Loss 0.04760969057679176
+    Epoch 29 Loss 0.0631222203373909
+    Epoch 30 Loss 0.05801505595445633
+    saving..
+    Epoch 31 Loss 0.04038994386792183
+    Epoch 32 Loss 0.04846473038196564
+    Epoch 33 Loss 0.03438137471675873
+    Epoch 34 Loss 0.0507717989385128
+    Epoch 35 Loss 0.04386137053370476
+    Epoch 36 Loss 0.02220572531223297
+    Epoch 37 Loss 0.035817574709653854
+    Epoch 38 Loss 0.035925790667533875
+    Epoch 39 Loss 0.02427162602543831
+    Epoch 40 Loss 0.03410062938928604
+    saving..
+    Epoch 41 Loss 0.020834561437368393
+    Epoch 42 Loss 0.030470337718725204
+    Epoch 43 Loss 0.03400654345750809
+    Epoch 44 Loss 0.03253806754946709
+    Epoch 45 Loss 0.044024936854839325
+    Epoch 46 Loss 0.020921403542160988
+    Epoch 47 Loss 0.0244738832116127
+    Epoch 48 Loss 0.02658231370151043
+    Epoch 49 Loss 0.02635858580470085
+    Epoch 50 Loss 0.029885344207286835
+    saving..
+    Epoch 51 Loss 0.024258796125650406
+    Epoch 52 Loss 0.01565518230199814
+    Epoch 53 Loss 0.013513020239770412
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode cont_rep --num_iters 1500 --lr 1e-3 --batch_size 256 --l2_lambda 0.0005 --grad_norm_clip 10
+TOTAL iterations:  235500
+    Epoch 0 Loss 0.5741563439369202
+    saving..
+    Epoch 1 Loss 0.4611544609069824
+    Epoch 2 Loss 0.4775833487510681
+    Epoch 3 Loss 0.40824899077415466
+    Epoch 4 Loss 0.3601289391517639
+    Epoch 5 Loss 0.38687339425086975
+    Epoch 6 Loss 0.33757221698760986
+    Epoch 7 Loss 0.21065548062324524
+    Epoch 8 Loss 0.276246577501297
+    Epoch 9 Loss 0.2262955754995346
+    Epoch 10 Loss 0.20521850883960724
+    saving..
+    Epoch 11 Loss 0.2187989354133606
+    Epoch 12 Loss 0.18631292879581451
+    Epoch 13 Loss 0.10262250900268555
+    Epoch 14 Loss 0.15399464964866638
+    Epoch 15 Loss 0.11975827813148499
+    Epoch 16 Loss 0.09747940301895142
+    Epoch 17 Loss 0.0867968201637268
+    Epoch 18 Loss 0.1442844271659851
+    Epoch 19 Loss 0.06935049593448639
+    Epoch 20 Loss 0.12344644963741302
+    saving..
+    Epoch 21 Loss 0.08518540114164352
+    Epoch 22 Loss 0.11860479414463043
+    Epoch 23 Loss 0.0500698983669281
+    Epoch 24 Loss 0.06678595393896103
+    Epoch 25 Loss 0.030611161142587662
+    Epoch 26 Loss 0.037765417248010635
+    Epoch 27 Loss 0.06786228716373444
+    Epoch 28 Loss 0.0568046011030674
+    Epoch 29 Loss 0.0446004681289196
+    Epoch 30 Loss 0.06276963651180267
+    saving..
+    Epoch 31 Loss 0.11026979982852936
+    Epoch 32 Loss 0.03877340629696846
+    Epoch 33 Loss 0.06765364110469818
+    Epoch 34 Loss 0.056774064898490906
+    Epoch 35 Loss 0.08512574434280396
+    Epoch 36 Loss 0.04179652780294418
+    Epoch 37 Loss 0.02847893163561821
+    Epoch 38 Loss 0.03339151293039322
+    Epoch 39 Loss 0.009161392226815224
+
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode cont_rep --num_iters 1500 --lr 1e-3 --batch_size 128 --l2_lambda 0.0005 --grad_norm_clip 10 
+    TOTAL iterations:  469500
+    Epoch 0 Loss 0.5697609186172485
+    saving..
+    Epoch 1 Loss 0.4311637282371521
+    Epoch 2 Loss 0.47578394412994385
+    Epoch 3 Loss 0.3346754312515259
+    Epoch 4 Loss 0.2969205975532532
+    Epoch 5 Loss 0.36495518684387207
+    Epoch 6 Loss 0.3030795454978943
+    Epoch 7 Loss 0.3267684876918793
+    Epoch 8 Loss 0.322101354598999
+    Epoch 9 Loss 0.22845621407032013
+    Epoch 10 Loss 0.23065844178199768
+    saving..
+    Epoch 11 Loss 0.2217479944229126
+    Epoch 12 Loss 0.1855292171239853
+    Epoch 13 Loss 0.19629743695259094
+    Epoch 14 Loss 0.1661374419927597
+    Epoch 15 Loss 0.13471993803977966
+    Epoch 16 Loss 0.13900581002235413
+    Epoch 17 Loss 0.15211288630962372
+    Epoch 18 Loss 0.13005371391773224
+    Epoch 19 Loss 0.13099181652069092
+    Epoch 20 Loss 0.11995314806699753
+    saving..
+    Epoch 21 Loss 0.0913056880235672
+    Epoch 22 Loss 0.026442958042025566
+    Epoch 23 Loss 0.03303857147693634
+    Epoch 24 Loss 0.04522539675235748
+    Epoch 25 Loss 0.05234435945749283
+    Epoch 26 Loss 0.02856208011507988
+    Epoch 27 Loss 0.07183900475502014
+    Epoch 28 Loss 0.025751758366823196
+    Epoch 29 Loss 0.02573997527360916
+    Epoch 30 Loss 0.07454469054937363
+    saving..
+    Epoch 31 Loss 0.01940217614173889
+    Epoch 32 Loss 0.02301023155450821
+    Epoch 33 Loss 0.06689591705799103
+    Epoch 34 Loss 0.027571823447942734
+    Epoch 35 Loss 0.09589710831642151
+    Epoch 36 Loss 0.07333087921142578
+    Epoch 37 Loss 0.04809863120317459
+    Epoch 38 Loss 0.011996272951364517
+
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode cont_rep --num_iters 1800 --lr 1e-3 --batch_size 256 --l2_lambda 0.0005 --grad_norm_clip 10 
+TOTAL iterations:  282600
+    Epoch 0 Loss 0.5832623243331909
+    saving..
+    Epoch 1 Loss 0.45051825046539307
+    Epoch 2 Loss 0.5057700872421265
+    Epoch 3 Loss 0.4188481569290161
+    Epoch 4 Loss 0.3597522974014282
+    Epoch 5 Loss 0.42211586236953735
+    Epoch 6 Loss 0.3482813835144043
+    Epoch 7 Loss 0.286603182554245
+    Epoch 8 Loss 0.2554863691329956
+    Epoch 9 Loss 0.2391500174999237
+    Epoch 10 Loss 0.21161723136901855
+    saving..
+    Epoch 11 Loss 0.2194729447364807
+    Epoch 12 Loss 0.18189789354801178
+    Epoch 13 Loss 0.1358923465013504
+    Epoch 14 Loss 0.1654070019721985
+    Epoch 15 Loss 0.13010293245315552
+    Epoch 16 Loss 0.10831840336322784
+    Epoch 17 Loss 0.1126972883939743
+    Epoch 18 Loss 0.13808493316173553
+    Epoch 19 Loss 0.07718192040920258
+    Epoch 20 Loss 0.11208148300647736
+    saving..
+    Epoch 21 Loss 0.06611839681863785
+    Epoch 22 Loss 0.09307350963354111
+    Epoch 23 Loss 0.057621732354164124
+    Epoch 24 Loss 0.07995577156543732
+    Epoch 25 Loss 0.049179382622241974
+    Epoch 26 Loss 0.036675214767456055
+    Epoch 27 Loss 0.07223287224769592
+    Epoch 28 Loss 0.06491594016551971
+    Epoch 29 Loss 0.03957130014896393
+    Epoch 30 Loss 0.055560674518346786
+    saving..
+    Epoch 31 Loss 0.06893317401409149
+    Epoch 32 Loss 0.0294757429510355
+    Epoch 33 Loss 0.07223258912563324
+    Epoch 34 Loss 0.051947467029094696
+    Epoch 35 Loss 0.06273593008518219
+    Epoch 36 Loss 0.026885107159614563
+    Epoch 37 Loss 0.037313081324100494
+    Epoch 38 Loss 0.044948041439056396
+    Epoch 39 Loss 0.01054084487259388
+
+
+
+
+
+
+
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 1000 --lr 1e-3 --batch_size 256 --l2_lambda 0.0005 --grad_norm_cli
+p 10
+    Iter 1000 - Train Loss: 1.3094 - Train Acc: 0.7422 - Val Loss: 1.4504 - Val Acc: 0.6541
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 1000 --lr 1e-3 --batch_size 64 --l2_lambda 0.0005 --grad_norm_clip
+ 10
+    Iter 1000 - Train Loss: 1.3081 - Train Acc: 0.7188 - Val Loss: 1.4523 - Val Acc: 0.6518
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 1000 --lr 1e-3 --batch_size 128 --l2_lambda 0.0005 --grad_norm_cli
+p 10
+    Iter 1000 - Train Loss: 1.2972 - Train Acc: 0.7188 - Val Loss: 1.4497 - Val Acc: 0.6549
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 1000 --lr 1e-3 --batch_size 512 --l2_lambda 0.0005 --grad_norm_cli
+p 10
+    Iter 1000 - Train Loss: 1.3458 - Train Acc: 0.7246 - Val Loss: 1.4506 - Val Acc: 0.6553
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 1000 --lr 1e-3 --batch_size 1024 --l2_lambda 0.0005 --grad_norm_cl
+ip 10
+    Iter 1000 - Train Loss: 1.3530 - Train Acc: 0.7295 - Val Loss: 1.4499 - Val Acc: 0.6585
+
+
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 8000 --lr 1e-3 --batch_size 32 --l2_lambda 0.0005 --grad_norm_clip 10
+    Iter 8000 - Train Loss: 0.2726 - Train Acc: 0.9375 - Val Loss: 0.5606 - Val Acc: 0.8315
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 8000 --lr 1e-3 --batch_size 64 --l2_lambda 0.0005 --grad_norm_clip
+ 10
+    Iter 8000 - Train Loss: 0.2754 - Train Acc: 0.9375 - Val Loss: 0.5607 - Val Acc: 0.8310
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 8000 --lr 1e-3 --batch_size 128 --l2_lambda 0.0005 --grad_norm_cli
+p 10
+    Iter 8000 - Train Loss: 0.2639 - Train Acc: 0.9531 - Val Loss: 0.5607 - Val Acc: 0.8308
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 8000 --lr 1e-3 --batch_size 256 --l2_lambda 0.0005 --grad_norm_cli
+p 10
+    Iter 8000 - Train Loss: 0.2670 - Train Acc: 0.9570 - Val Loss: 0.5606 - Val Acc: 0.8310
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 8000 --lr 1e-3 --batch_size 512 --l2_lambda 0.0005 --grad_norm_cli
+p 10
+    Iter 8000 - Train Loss: 0.2678 - Train Acc: 0.9512 - Val Loss: 0.5606 - Val Acc: 0.8310
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 8000 --lr 1e-3 --batch_size 1024 --l2_lambda 0.0005 --grad_norm_cl
+ip 10
+    Iter 8000 - Train Loss: 0.2705 - Train Acc: 0.9512 - Val Loss: 0.5606 - Val Acc: 0.8311
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 8000 --lr 1e-3 --batch_size 32 --l2_lambda 0.0005 --grad_norm_clip
+ 10
+    Iter 8000 - Train Loss: 0.2726 - Train Acc: 0.9375 - Val Loss: 0.5606 - Val Acc: 0.8315
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 10000 --lr 1e-3 --batch_size 32 --l2_lambda 0.0005 --grad_norm_cli
+p 10
+    Iter 10000 - Train Loss: 0.2433 - Train Acc: 0.9375 - Val Loss: 0.5436 - Val Acc: 0.8317
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 10000 --lr 1e-3 --batch_size 64 --l2_lambda 0.0005 --grad_norm_cli
+p 10
+    Iter 10000 - Train Loss: 0.2336 - Train Acc: 0.9531 - Val Loss: 0.5438 - Val Acc: 0.8315
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_linear --num_iters 8000 --lr 1e-3 --batch_size 32 --l2_lambda 0.0005 --grad_norm_clip 10
+    Iter 8000 - Train Loss: 0.2726 - Train Acc: 0.9375 - Val Loss: 0.5606 - Val Acc: 0.8315
+
+keeping above one final with 0.8315
+
+
+
+
+
+
+
+
+
+
+
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_nn --num_iters 100 --lr 1e-3 --batch_size 32 --l2_lambda 0.0005 --grad_norm_clip 10 
+    epoch: 99 --> train loss: 1.1475880146026611, train accuracy: 0.78125, validatpon loss: 1.256278157234192, validation accuracy: 0.875
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_nn --num_iters 100 --lr 1e-3 --batch_size 64 --l2_lambda 0.0005 --grad_norm_clip 10
+    epoch: 99 --> train loss: 0.8334894180297852, train accuracy: 0.90625, validatpon loss: 1.018276572227478, validation accuracy: 0.84375
+
+nishat@WellsFargo:~/ML_assignment_final$ python3 run.py 23754 --mode fine_tune_nn --num_iters 200 --lr 1e-3 --batch_size 32 --l2_lambda 0.0005 --grad_norm_clip 10
+    epoch: 198 --> train loss: 2.29819917678833, train accuracy: 0.8125, validatpon loss: 0.6592127084732056, validation accuracy: 0.84375 fetchinv loss...
+    epoch: 199 --> train loss: 1.1408095359802246, train accuracy: 0.75, validatpon loss: 1.5295222997665405, validation accuracy: 0.71875
